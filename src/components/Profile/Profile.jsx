@@ -1,28 +1,35 @@
 import PropTypes from 'prop-types';
-import defaultImage from './—Pngtree—cat default avatar_5416936.png';
+import s from 'components/Profile/Profile.module.css';
+import defaultImage from 'components/Profile/default-cat.png';
 
-export default function Profile({ avatar, name, tag, location, stats }) {
+export default function Profile({
+  avatar = defaultImage,
+  name,
+  tag,
+  location,
+  stats,
+}) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="Аватар пользователя" class="avatar" />
-        <p class="name">{name}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+    <div className={s.card}>
+      <div className={s.userInfo}>
+        <img src={avatar} alt="Аватар пользователя" className={s.userAvatar} />
+        <p className={s.userName}>{name}</p>
+        <p className={s.userTag}>@{tag}</p>
+        <p className={s.userLocation}>{location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
+      <ul className={s.userStats}>
+        <li className={s.statItem}>
+          <span className={s.statLabel}>Followers</span>
+          <span className={s.statData}>{stats.followers}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
+        <li className={s.statItem}>
+          <span className={s.statLabel}>Views</span>
+          <span className={s.statData}>{stats.views}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
+        <li className={s.statItem}>
+          <span className={s.statLabel}>Likes</span>
+          <span className={s.statData}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -35,8 +42,4 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   stats: PropTypes.objectOf(PropTypes.number).isRequired,
-};
-
-Profile.defaultProps = {
-  avatar: defaultImage,
 };

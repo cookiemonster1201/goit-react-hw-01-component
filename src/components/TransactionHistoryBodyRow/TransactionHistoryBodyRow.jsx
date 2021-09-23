@@ -4,8 +4,8 @@ export default function TransactionHistoryRow({ transaction }) {
 
   return (
     <>
-      {data.map((value, idx) => (
-        <td key={idx}>{value}</td>
+      {data.map(value => (
+        <td key={value}>{value}</td>
       ))}
     </>
   );

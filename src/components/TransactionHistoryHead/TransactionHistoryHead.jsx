@@ -4,8 +4,8 @@ export default function TransactionHistoryHead({ transaction }) {
 
   return (
     <tr>
-      {tableHeadLabels.map((label, idx) => (
-        <th key={idx}>{label}</th>
+      {tableHeadLabels.map(label => (
+        <th key={label}>{label}</th>
       ))}
     </tr>
   );

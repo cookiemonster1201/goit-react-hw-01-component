@@ -1,15 +1,16 @@
-import Profile from './components/Profile/Profile';
-import Statistics from './components/Statistics/Statistics';
-import FriendsList from './components/Friends-list/Friends-list';
-import TransactionHistoryTable from './components/Transaction-history-table/Transaction-history-table';
-import user from './user.json';
-import statisticalData from './statistical-data.json';
-import friends from './friends.json';
-import transactions from './transactions.json';
+import Container from 'components/Container/Container';
+import Profile from 'components/Profile/Profile';
+import Statistics from 'components/Statistics/Statistics';
+import FriendsList from 'components/FriendsList/FriendsList';
+import TransactionHistoryTable from 'components/TransactionHistoryTable/TransactionHistoryTable';
+import user from 'user.json';
+import statisticalData from 'statistical-data.json';
+import friends from 'friends.json';
+import transactions from 'transactions.json';
 
 export default function App() {
   return (
-    <>
+    <Container>
       <Profile
         avatar={user.avatar}
         name={user.name}
@@ -23,6 +24,6 @@ export default function App() {
       <FriendsList friends={friends} />
 
       <TransactionHistoryTable items={transactions} />
-    </>
+    </Container>
   );
 }

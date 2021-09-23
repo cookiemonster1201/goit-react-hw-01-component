@@ -1,0 +1,30 @@
+.availability {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.online {
+  composes: availability;
+  background-color: green;
+}
+
+.offline {
+  composes: availability;
+  background-color: red;
+}
+
+.userName {
+  margin-left: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.userImg {
+  margin-left: 20px;
+  background-color: #fff;
+  border: 2px solid rgb(31, 114, 38);
+  border-radius: 5px;
+}
